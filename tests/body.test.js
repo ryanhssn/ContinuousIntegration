@@ -45,7 +45,6 @@ describe('When logged in', async () => {
       await page.click('button.green');
       await page.waitFor('.card');
 
-
       const title = await page.getContentsOf('.card-title');
       const content = await page.getContentsOf('p');
 
@@ -59,6 +58,7 @@ describe('When logged in', async () => {
     beforeEach(async () => {
       await page.click('form button');
     })
+
 
     test('the form shows an error message', async () => {
       const titleError = await page.getContentsOf('.title .red-text')
